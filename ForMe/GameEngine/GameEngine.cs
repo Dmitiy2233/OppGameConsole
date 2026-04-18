@@ -7,6 +7,7 @@ enum GameState
     Exit
 }
 
+
 public class GameEngine
 {
     private bool isRunning = true;
@@ -29,7 +30,7 @@ public class GameEngine
                 break;
             
             case GameState.Playing:
-                Playing();
+                Game.Playing();
                 break;
             
             case GameState.Exit:
@@ -71,21 +72,5 @@ public class GameEngine
         return;
     }
 
-    private void Playing()
-    {
-        Console.WriteLine("Hi traveller");
-        Console.WriteLine("Choose your opponent!");
-        HeroIntr();
-        Console.WriteLine("Type 1 for battle with Goblin");
-        
-
-        int input = int.Parse(Console.ReadLine());
-
-        switch (input)
-        {
-            case 1:
-                
-                break;
-        }
-    }
+   
 }
