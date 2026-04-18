@@ -1,0 +1,91 @@
+﻿namespace ForMe.GameEngine;
+
+enum GameState
+{
+    Menu,
+    Playing,
+    Exit
+}
+
+public class GameEngine
+{
+    private bool isRunning = true;
+    private GameState state = GameState.Menu;
+    
+    public void Run()
+    {
+        while (isRunning)
+        {
+            Update();
+        }
+    }
+
+    private void Update()
+    {
+        switch (state)
+        {
+            case GameState.Menu:
+                Menu();
+                break;
+            
+            case GameState.Playing:
+                Playing();
+                break;
+            
+            case GameState.Exit:
+                Exit();
+                break;
+                
+        }    
+    }
+
+    private void Menu()
+    {
+        Console.WriteLine("=== Menu ====");
+        
+        Console.WriteLine("For resume type 1");
+        Console.WriteLine("for exit type 2");
+    
+    
+        int input = int.Parse(Console.ReadLine());
+
+        switch (input) 
+        {
+            case 1:
+                state = GameState.Playing;
+                break;
+            
+            case 2:
+                state = GameState.Exit;
+                break;
+            default:
+                state = GameState.Exit;
+                break;
+        }
+    }
+
+    private void Exit()
+    {
+        Console.WriteLine("Bye Bye");
+        isRunning = false;
+        return;
+    }
+
+    private void Playing()
+    {
+        Console.WriteLine("Hi traveller");
+        Console.WriteLine("Choose your opponent!");
+        HeroIntr();
+        Console.WriteLine("Type 1 for battle with Goblin");
+        
+
+        int input = int.Parse(Console.ReadLine());
+
+        switch (input)
+        {
+            case 1:
+                
+                break;
+        }
+    }
+}

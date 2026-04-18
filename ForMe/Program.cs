@@ -1,1 +1,7 @@
-﻿Console.WriteLine("loldasfasl");
+﻿class Program
+{
+    static void Main()
+    {
+        
+    }
+}
