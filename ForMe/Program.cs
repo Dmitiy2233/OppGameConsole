@@ -1,1 +1,1 @@
-﻿Console.WriteLine("lol");
+﻿Console.WriteLine("loll");
