@@ -11,7 +11,9 @@ public class Combat
         
         while (Isfighting)
         {
-            Console.WriteLine("You have 2 options (type number for choose)");
+            Console.WriteLine("=== Fight started ===");
+            Console.WriteLine(($"Hero Hp: {Hero.Health}"));
+            Console.WriteLine(($"{Enemy.Name} Hp: {Enemy.Health}"));
             Console.WriteLine("1. Atack");
             Console.WriteLine("2. Heal");
             int input = int.Parse(Console.ReadLine());
@@ -38,12 +40,12 @@ public class Combat
                 switch (action)
                 {
                     case 0:
-                        Console.WriteLine($"{Enemy.Name} attacks!");
+                        Console.WriteLine($"{Enemy.Name} attacks!\n");
                         Hero.Health -= Enemy.Damage;
                         break;
 
                     case 1:
-                        Console.WriteLine($"{Enemy.Name} heals!");
+                        Console.WriteLine($"{Enemy.Name} heals!\n");
                         Enemy.Health += Enemy.Damage;
                         break;
                 }

@@ -10,8 +10,9 @@ enum GameState
 
 public class GameEngine
 {
+    private Game game = new Game();
     private bool isRunning = true;
-    private GameState state = GameState.Menu;
+    private GameState state = GameState.Playing;
     
     public void Run()
     {
@@ -30,7 +31,7 @@ public class GameEngine
                 break;
             
             case GameState.Playing:
-                Game.Playing();
+                game.Playing();
                 break;
             
             case GameState.Exit:
@@ -44,7 +45,7 @@ public class GameEngine
     {
         Console.WriteLine("=== Menu ====");
         
-        Console.WriteLine("For resume type 1");
+        Console.WriteLine("For playing type 1");
         Console.WriteLine("for exit type 2");
     
     

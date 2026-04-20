@@ -12,3 +12,4 @@ C:\Users\Dmytro\RiderProjects\ForMe\ForMe\obj\Debug\net10.0\refint\ForMe.dll
 C:\Users\Dmytro\RiderProjects\ForMe\ForMe\obj\Debug\net10.0\ForMe.pdb
 C:\Users\Dmytro\RiderProjects\ForMe\ForMe\obj\Debug\net10.0\ForMe.genruntimeconfig.cache
 C:\Users\Dmytro\RiderProjects\ForMe\ForMe\obj\Debug\net10.0\ref\ForMe.dll
+C:\Users\Dmytro\RiderProjects\ForMe\ForMe\obj\Debug\net10.0\ForMe.sourcelink.json

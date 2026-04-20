@@ -1,13 +1,11 @@
-﻿using ForMe.Models;
+﻿using ForMe.GameEngine;
+using ForMe.Models;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        Character Goblin = new Character("Goblin", 60, 10, 10);
-        Console.WriteLine("What is your Name Traveller");
-        string input = Console.ReadLine();
-        Character hero = new Character(input, 100, 20, 20);
-        
+        GameEngine engine = new GameEngine();
+        engine.Run();
     }
 }
