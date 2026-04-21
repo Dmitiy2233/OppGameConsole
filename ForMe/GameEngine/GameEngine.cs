@@ -10,13 +10,13 @@ enum GameState
 
 public class GameEngine
 {
-    private Game game = new Game();
-    private bool isRunning = true;
-    private GameState state = GameState.Playing;
+    private readonly Game _game = new Game();
+    private bool _isRunning = true;
+    private GameState _state = GameState.Playing;
     
     public void Run()
     {
-        while (isRunning)
+        while (_isRunning)
         {
             Update();
         }
@@ -24,14 +24,14 @@ public class GameEngine
 
     private void Update()
     {
-        switch (state)
+        switch (_state)
         {
             case GameState.Menu:
                 Menu();
                 break;
             
             case GameState.Playing:
-                game.Playing();
+                _game.Playing();
                 break;
             
             case GameState.Exit:
@@ -54,14 +54,14 @@ public class GameEngine
         switch (input) 
         {
             case 1:
-                state = GameState.Playing;
+                _state = GameState.Playing;
                 break;
             
             case 2:
-                state = GameState.Exit;
+                _state = GameState.Exit;
                 break;
             default:
-                state = GameState.Exit;
+                _state = GameState.Exit;
                 break;
         }
     }
@@ -69,8 +69,7 @@ public class GameEngine
     private void Exit()
     {
         Console.WriteLine("Bye Bye");
-        isRunning = false;
-        return;
+        _isRunning = false;
     }
 
    

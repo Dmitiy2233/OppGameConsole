@@ -4,30 +4,30 @@ namespace ForMe.GameEngine;
 
 public class Combat
 {
-    private Random rnd = new Random();
-    private bool Isfighting = true;
-    public void Fight(Character Hero, Character Enemy)
+    private Random _rnd = new Random();
+    private bool _isfighting = true;
+    public void Fight(Character hero, Character enemy)
     {
         
-        while (Isfighting)
+        while (_isfighting)
         {
             Console.WriteLine("=== Fight started ===");
-            Console.WriteLine(($"Hero Hp: {Hero.Health}"));
-            Console.WriteLine(($"{Enemy.Name} Hp: {Enemy.Health}"));
+            Console.WriteLine(($"Hero Hp: {hero.Health}"));
+            Console.WriteLine(($"{enemy.Name} Hp: {enemy.Health}"));
             Console.WriteLine("1. Atack");
             Console.WriteLine("2. Heal");
-            int input = int.Parse(Console.ReadLine());
+            int input = int.Parse(Console.ReadLine() ?? "");
 
             switch (input)
             {
                 case 1:
                     Console.WriteLine("Enemy has been atacked");
-                    Enemy.Health -= Hero.Damage;
+                    enemy.Health -= hero.Damage;
                     break;
                 
                 case 2:
-                    Console.WriteLine($"{Hero.Name} heals");
-                        Hero.Health += Hero.Heal;
+                    Console.WriteLine($"{hero.Name} heals");
+                        hero.Health += hero.Heal;
                     break;
                 
                 default:
@@ -35,32 +35,32 @@ public class Combat
             }
             
             
-                int action = rnd.Next(0, 2); // 0 or 1
+                int action = _rnd.Next(0, 2); // 0 or 1
 
                 switch (action)
                 {
                     case 0:
-                        Console.WriteLine($"{Enemy.Name} attacks!\n");
-                        Hero.Health -= Enemy.Damage;
+                        Console.WriteLine($"{enemy.Name} attacks!\n");
+                        hero.Health -= enemy.Damage;
                         break;
 
                     case 1:
-                        Console.WriteLine($"{Enemy.Name} heals!\n");
-                        Enemy.Health += Enemy.Damage;
+                        Console.WriteLine($"{enemy.Name} heals!\n");
+                        enemy.Health += enemy.Damage;
                         break;
                 }
             
             
-            if (Hero.Health <= 0)
+            if (hero.Health <= 0)
             {
-                Console.WriteLine($"{Enemy.Name} got the win");
-                Isfighting = false;
+                Console.WriteLine($"{enemy.Name} got the win");
+                _isfighting = false;
             }
 
-            if (Enemy.Health <= 0)
+            if (enemy.Health <= 0)
             {
-                Console.WriteLine($"{Hero.Name} got the win");
-                Isfighting = false;
+                Console.WriteLine($"{hero.Name} got the win");
+                _isfighting = false;
             }
         }
         

@@ -1,5 +1,4 @@
 ﻿using ForMe.GameEngine;
-using ForMe.Models;
 
 class Program
 {
